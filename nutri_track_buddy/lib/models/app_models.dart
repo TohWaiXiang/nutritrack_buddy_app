@@ -65,7 +65,8 @@ class UserProfile {
     }
   }
 
-  int get effectiveCalorieGoal => calorieGoal > 0 ? calorieGoal : targetCalories;
+  int get effectiveCalorieGoal =>
+      calorieGoal > 0 ? calorieGoal : targetCalories;
 
   UserProfile copyWith({
     String? email,
@@ -133,7 +134,8 @@ class UserProfile {
   factory UserProfile.fromMap(Map<String, dynamic> map) => UserProfile(
         email: map['email'] ?? '',
         password: map['password'] ?? '',
-        securityQuestion: map['securityQuestion'] ?? 'What is your favorite food?',
+        securityQuestion:
+            map['securityQuestion'] ?? 'What is your favorite food?',
         securityAnswer: map['securityAnswer'] ?? '',
         name: map['name'] ?? '',
         age: map['age'] ?? 25,
@@ -152,7 +154,8 @@ class UserProfile {
       );
 
   String toJson() => jsonEncode(toMap());
-  factory UserProfile.fromJson(String source) => UserProfile.fromMap(jsonDecode(source));
+  factory UserProfile.fromJson(String source) =>
+      UserProfile.fromMap(jsonDecode(source));
 }
 
 class MealEntry {
